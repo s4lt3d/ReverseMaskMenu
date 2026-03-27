@@ -1,0 +1,189 @@
+# Top-most EditorConfig file
+root = true
+
+# C# files
+[*.cs]
+
+################################################################
+#  Core EditorConfig Options
+################################################################
+
+indent_style = space
+indent_size = 4
+tab_width = 4
+max_line_length = 120
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+################################################################
+#  Brace Style (Allman)
+################################################################
+
+# Open braces on a new line for all code elements
+csharp_new_line_before_open_brace = all
+
+# else, catch, finally each start on a new line
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+
+################################################################
+#  Braces
+################################################################
+
+# Allow single-line if/for/foreach/while statements without braces.
+csharp_prefer_braces = false:silent
+
+################################################################
+#  Spacing Rules
+################################################################
+
+# Space after keywords in control flow: if (x), for (x), while (x)
+csharp_space_after_keywords_in_control_flow_statements = true
+
+# No space between method name and parentheses: Jump(), DoSomething()
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+
+# No space inside parentheses: DoSomething(x) not DoSomething( x )
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+
+# No space inside empty parentheses: DoSomething() not DoSomething( )
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+
+# No space after cast: (float)y not (float) y
+csharp_space_after_cast = false
+
+# No space inside square brackets: items[i] not items[ i ]
+csharp_space_between_square_brackets = false
+csharp_space_before_open_square_brackets = false
+
+# Space after commas: DoSomething(x, y, z)
+csharp_space_after_comma = true
+csharp_space_before_comma = false
+
+# Space around binary operators: x == y, a + b
+csharp_space_around_binary_operators = before_and_after
+
+# No space before semicolons in for statements
+csharp_space_before_semicolon_in_for_statement = false
+csharp_space_after_semicolon_in_for_statement = true
+
+# No space around dot: object.Method not object . Method
+csharp_space_after_dot = false
+csharp_space_before_dot = false
+
+# Space before and after colon in base/interface list: Player : MonoBehaviour
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_after_colon_in_inheritance_clause = true
+
+################################################################
+#  Enforce Formatting as Errors
+################################################################
+
+# All formatting violations report as errors
+dotnet_diagnostic.IDE0055.severity = error
+
+# Do not report missing braces for single-line control statements
+dotnet_diagnostic.IDE0011.severity = silent
+
+################################################################
+#  Single Statement / Declaration Per Line
+################################################################
+
+# Allow single-line statements where valid
+csharp_preserve_single_line_statements = true
+
+# Allow single-line blocks (e.g. auto-properties) — these are not the same as if/else
+csharp_preserve_single_line_blocks = true
+
+################################################################
+#  Recommended Defaults 
+#  (Not specified by style guide, but generally recommended)
+################################################################
+
+#### Indentation ####
+
+# Indent contents inside a code block: { ... }
+csharp_indent_block_contents = true
+
+# Indent case contents inside switch statements
+csharp_indent_case_contents = true
+
+# Indent switch labels inside switch statements
+csharp_indent_switch_labels = true
+
+# Do not indent the braces themselves (Allman style keeps braces flush)
+csharp_indent_braces = false
+
+# When a case block uses braces, indent the contents
+csharp_indent_case_contents_when_block = true
+
+#### New Lines ####
+
+# Each member in an object initializer goes on its own line
+csharp_new_line_before_members_in_object_initializers = true
+
+# Each member in an anonymous type goes on its own line
+csharp_new_line_before_members_in_anonymous_types = true
+
+# Each query clause (from, where, select) goes on its own line
+csharp_new_line_between_query_expression_clauses = true
+
+#### Attributes ####
+
+# Rider/ReSharper: force one attribute section per line, e.g.
+# [Attr1]
+# [Attr2]
+# instead of [Attr1, Attr2]
+resharper_csharp_force_attribute_style = separate
+
+# Rider/ReSharper: never keep an attribute on the same line as its owner.
+resharper_csharp_place_attribute_on_same_line = never
+
+# Rider/ReSharper: allow formatter to rearrange existing attribute layout.
+resharper_csharp_keep_existing_attribute_arrangement = false
+
+#### Using Directives ####
+
+# Sort System.* using directives first
+dotnet_sort_system_directives_first = true
+
+# Separate import directive groups with a blank line
+dotnet_separate_import_directive_groups = false
+
+################################################################
+#  Naming Rules
+################################################################
+
+# Class names use PascalCase without underscore prefixes.
+dotnet_naming_symbols.classes.applicable_kinds = class
+dotnet_naming_symbols.classes.applicable_accessibilities = *
+dotnet_naming_symbols.classes.required_modifiers =
+
+dotnet_naming_style.pascal_case_no_prefix.capitalization = pascal_case
+dotnet_naming_style.pascal_case_no_prefix.required_prefix =
+dotnet_naming_style.pascal_case_no_prefix.required_suffix =
+dotnet_naming_style.pascal_case_no_prefix.word_separator =
+
+dotnet_naming_rule.classes_should_be_pascal_case.symbols = classes
+dotnet_naming_rule.classes_should_be_pascal_case.style = pascal_case_no_prefix
+dotnet_naming_rule.classes_should_be_pascal_case.severity = warning
+
+# Instance and class fields use camelCase without underscore prefixes.
+dotnet_naming_symbols.non_public_fields.applicable_kinds = field
+dotnet_naming_symbols.non_public_fields.applicable_accessibilities = private, internal, protected, protected_internal, private_protected
+dotnet_naming_symbols.non_public_fields.required_modifiers =
+
+dotnet_naming_style.camel_case_no_prefix.capitalization = camel_case
+dotnet_naming_style.camel_case_no_prefix.required_prefix =
+dotnet_naming_style.camel_case_no_prefix.required_suffix =
+dotnet_naming_style.camel_case_no_prefix.word_separator =
+
+dotnet_naming_rule.non_public_fields_should_be_camel_case.symbols = non_public_fields
+dotnet_naming_rule.non_public_fields_should_be_camel_case.style = camel_case_no_prefix
+dotnet_naming_rule.non_public_fields_should_be_camel_case.severity = warning
